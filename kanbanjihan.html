@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      body {
+    background-color: #B9B4C7;
+}
+.is-dragging {
+  scale: 1.05;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  background: rgb(44, 41, 41);
+  color: #201e1e;
+}
+.kanban-column-highlight {
+    background-color: #d4edda; /* Warna latar belakang saat card di-hover */
+  }
+  
+  .list-group-item {
+    /* Atur properti untuk efek transisi */
+    transition: transform 0.3s ease-in-out;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h2 class="text-center" style="font-family: Optima;">Kanban Board</h2>
+      <p class="text-center" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Jihan Azizah</p>
+        <form id="todo-form" class="row row-cols-lg-auto g-6 align-items-center">
+            <div class="col-12 ms-5 mt-2">
+            <input type="text" class="form-control" id="todo-input" placeholder="Tulis kegiatan baru">
+            </div>
+            <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-outline-light">Tambah +</button>
+            </div>
+        </form>
+
+        <div class="container-fluid">
+            <div class="row my-4 ms-4">
+                <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="img/kopi.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Untuk Dilakukan</h5>
+                  <p class="card-text">"Jangan menunda-nunda pekerjaan, Biar enggak keteteran"</p>
+                </div>
+                <ul class="list-group list-group-flush" style="background-color: black;" id="KolomTodo">
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Belajar javascript dasar di youtube</li>
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Latihan javascript</li>
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Ngoding</li>
+                </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="img/malam.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Sedang Dilakukan</h5>
+                  <p class="card-text">"Tetap semangat dalam belajar dan meraih cita-cita"</p>
+                </div>
+                <ul class="list-group list-group-flush" style="background-color: black;">
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Tidur</li>
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Belajar</li>
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Mengerjakan tugas</li>
+                </ul>
+            </div>
+            </div>
+            <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="img/langit.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Selesai Dilakukan</h5>
+                  <p class="card-text">"Jangan lupa bersyukur, Ucapkan Alhamdulillah"</p>
+                </div>
+                <ul class="list-group list-group-flush" style="background-color: black;" id="KolomDone">
+                  <li class="list-group-item" draggable="true" style="box-shadow: #817a96;">Membaca document</li>
+                  <li class="list-group-item" draggable="true"style="box-shadow: #817a96;">Makan</li>
+                  <li class="list-group-item" draggable="true"style="box-shadow: #817a96;">Mengerjakan tugas</li>
+                </ul>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="kanban.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
